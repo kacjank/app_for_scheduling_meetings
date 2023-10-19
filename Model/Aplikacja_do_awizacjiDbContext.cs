@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacja_do_awizacji.Model
 {
-    public class Aplikacja_do_awizacjiDbContext : DbContext //Dziedziczy po klasie DbContext
-                                            //z Entity Framework i "składa wszystko do kupy"
+    public class Aplikacja_do_awizacjiDbContext : DbContext
     {
         public Aplikacja_do_awizacjiDbContext() : base()
         {
@@ -20,7 +19,7 @@ namespace Aplikacja_do_awizacji.Model
             optionsBuilder.UseSqlServer(Program.ConnectionString);
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder) //Wszystkie zasady odnośnie tabel
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Guest>()
                 .HasOne(g => g.Worker)
@@ -41,7 +40,6 @@ namespace Aplikacja_do_awizacji.Model
                 .OnDelete(DeleteBehavior.NoAction);
         }
 
-        // Muszą być tu wymienione wszystkie tabele
         public DbSet<Guest> Guests { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<Meeting> Meetings { get; set; }
