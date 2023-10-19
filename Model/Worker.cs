@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace Aplikacja_do_awizacji.Model
 {
-    [Table("Workers")] //[Table("nazwa_tabeli")] zmapuje do sql-a tabelę pod podaną nazwą
-                       //zamiast nazwy klasy (tabela "Workers" a nie "Worker")
+    [Table("Workers")]
     public class Worker
     {
         [Key] public int Id { get; set; }
@@ -20,7 +19,7 @@ namespace Aplikacja_do_awizacji.Model
         public string? Phone { get; set; }
 
         //Pola potrzebne do utworzenia relacji:
-        public IEnumerable<Guest>? Guests { get; set; } //Pracownik może dodać wielu gości
-        public IEnumerable<Meeting>? Meetings { get; set; } //Pracownik może utworzyć wiele awizacji
+        public IEnumerable<Guest>? Guests { get; set; }
+        public IEnumerable<Meeting>? Meetings { get; set; }
     }
 }
