@@ -20,7 +20,7 @@ namespace Aplikacja_do_awizacji.Model
         public int WorkerId { get; set; }
 
         //Pola potrzebne do utworzenia relacji:
-        public Worker Worker { get; set; } //Pracownik, przez którego gość został dodany
-        public IEnumerable<Meeting>? Meetings { get; set; } //Wszystkie awizacje dotyczące danego gościa
+        public Worker Worker { get; set; }
+        public IEnumerable<Meeting>? Meetings { get; set; }
     }
 }
