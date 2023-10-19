@@ -21,7 +21,7 @@ namespace Aplikacja_do_awizacji
             if (string.IsNullOrEmpty(loginTextBox.Text) ||
                 string.IsNullOrEmpty(passwordTextBox.Text))
             {
-                MessageBox.Show("Podaj login i has³o");
+                MessageBox.Show("Podaj login i hasÅ‚o");
                 return;
             }
 
@@ -38,7 +38,6 @@ namespace Aplikacja_do_awizacji
             {
                 connection.Open();
 
-                //string query = "SELECT Password FROM Workers WHERE Email = 'kacper@jankowski.pl'"
                 string query = "SELECT Password FROM Workers WHERE Email = '@Login'";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
@@ -52,7 +51,7 @@ namespace Aplikacja_do_awizacji
                     //}
                     //else
                     //{
-                    //    MessageBox.Show("B³¹d logowania. Spróbuj ponownie.");
+                    //    MessageBox.Show("BÂ³Â¹d logowania. SprÃ³buj ponownie.");
                     //}
                 }
 
